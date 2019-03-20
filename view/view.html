@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title></title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/view.css" rel="stylesheet" />
+</head>
+
+<body class="sidebar-mini">
+  <div class="wrapper">
+    <div class="main-panel">
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card mt-5">
+              <div class="card-header">
+                <h4 class="card-title">Data List</h4>
+              </div>
+              <div class="card-body">
+                <div class="toolbar">
+                  <!--        Here you can write extra buttons/actions for the toolbar              -->
+                </div>
+                <table id="datatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Provider</th>
+                      <th>Amount</th>
+                      <th>Transaction Type</th>
+                      <th>Phone No</th>
+                      <th>Feedback</th>
+                      <th>Time In</th>
+                      <th>Time Out</th>
+                      <th>Status</th>
+                      <!-- <th class="disabled-sorting text-right">Actions</th> -->
+                    </tr>
+
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Provider</th>
+                      <th>Amount</th>
+                      <th>Transaction Type</th>
+                      <th>Phone No</th>
+                      <th>Feedback</th>
+                      <th>Time In</th>
+                      <th>Time Out</th>
+                      <th>Status</th>
+                      <!-- <th class="disabled-sorting text-right">Actions</th> -->
+                    </tr>
+                  </tfoot>
+                  <tbody id='bodyData'>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- end content-->
+            </div>
+            <!--  end card  -->
+          </div>
+          <!-- end col-md-12 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <footer class="footer">
+
+      </footer>
+    </div>
+  </div>
+</body>
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<script src="assets/js/plugins/moment.min.js"></script>
+<!--  Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+<script src="assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+<!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
+<script src="assets/js/plugins/jquery.dataTables.min.js"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="assets/js/now-ui-dashboard.js?v=1.0.1"></script>
+<script>
+  $(document).ready(function () {
+   $(function () {
+    let data = [{ "id": 40240815, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 150.00, "currency": null, "merchantreference": "91920136406620181130234332", "uniquereference": "91920136406620181130234332", "timein": "2018-12-01T00:00:11.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2349029404253", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:13.000+0000" }, { "id": 40240930, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 300.00, "currency": null, "merchantreference": "91920136439320181130234437", "uniquereference": "91920136439320181130234437", "timein": "2018-12-01T00:00:31.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2347063476902", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:32.000+0000" }, { "id": 40240934, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 300.00, "currency": null, "merchantreference": "91920136440220181130234440", "uniquereference": "91920136440220181130234440", "timein": "2018-12-01T00:00:31.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2347061105959", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:33.000+0000" }, { "id": 40240935, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 50.00, "currency": null, "merchantreference": "91920136440320181130234440", "uniquereference": "91920136440320181130234440", "timein": "2018-12-01T00:00:31.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2347063866158", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:34.000+0000" }, { "id": 40240937, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 1100.00, "currency": null, "merchantreference": "91920136440720181130234441", "uniquereference": "91920136440720181130234441", "timein": "2018-12-01T00:00:31.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2348169556598", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:33.000+0000" }, { "id": 40240938, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 500.00, "currency": null, "merchantreference": "91920136441320181130234443", "uniquereference": "91920136441320181130234443", "timein": "2018-12-01T00:00:31.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2347061806059", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:33.000+0000" }, { "id": 40240939, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 100.00, "currency": null, "merchantreference": "91920136441520181130234443", "uniquereference": "91920136441520181130234443", "timein": "2018-12-01T00:00:32.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2349039661631", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:33.000+0000" }, { "id": 40240940, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 50.00, "currency": null, "merchantreference": "91920136442120181130234445", "uniquereference": "91920136442120181130234445", "timein": "2018-12-01T00:00:32.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2348141510332", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:33.000+0000" }, { "id": 40240941, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 300.00, "currency": null, "merchantreference": "91920136442220181130234446", "uniquereference": "91920136442220181130234446", "timein": "2018-12-01T00:00:32.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2348036499386", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:33.000+0000" }, { "id": 40240961, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 50.00, "currency": null, "merchantreference": "91920136446420181130234458", "uniquereference": "91920136446420181130234458", "timein": "2018-12-01T00:00:36.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2349079656081", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:00:38.000+0000" }, { "id": 40241250, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 100.00, "currency": null, "merchantreference": "91920136538220181130234820", "uniquereference": "91920136538220181130234820", "timein": "2018-12-01T00:01:27.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2348151668971", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:01:29.000+0000" }, { "id": 40241274, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 250.00, "currency": null, "merchantreference": "91920136542220181130234832", "uniquereference": "91920136542220181130234832", "timein": "2018-12-01T00:01:32.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2347010855679", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:01:34.000+0000" }, { "id": 40241443, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 100.00, "currency": null, "merchantreference": "91920136587620181130235020", "uniquereference": "91920136587620181130235020", "timein": "2018-12-01T00:01:57.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2348023764413", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:02:09.000+0000" }, { "id": 40241925, "apikeyid": 15, "provider": null, "productid": null, "amount": null, "currency": null, "merchantreference": null, "uniquereference": null, "timein": "2018-12-01T00:03:13.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "234908-878005", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:03:14.000+0000" }, { "id": 40243491, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 100.00, "currency": null, "merchantreference": "91920137125920181201001319", "uniquereference": "91920137125920181201001319", "timein": "2018-12-01T00:13:26.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2349028271725", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:13:28.000+0000" }, { "id": 40243816, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 1000.00, "currency": null, "merchantreference": "91920137208120181201001724", "uniquereference": "91920137208120181201001724", "timein": "2018-12-01T00:17:31.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2348066122248", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:17:33.000+0000" }, { "id": 40245607, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 1000.00, "currency": null, "merchantreference": "91920137730920181201005147", "uniquereference": "91920137730920181201005147", "timein": "2018-12-01T00:51:54.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2348081734675", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T00:51:57.000+0000" }, { "id": 40246291, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 200.00, "currency": null, "merchantreference": "91920137924020181201011040", "uniquereference": "91920137924020181201011040", "timein": "2018-12-01T01:10:48.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2348030856587", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T01:10:50.000+0000" }, { "id": 40246292, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 200.00, "currency": null, "merchantreference": "91920137924220181201011042", "uniquereference": "91920137924220181201011042", "timein": "2018-12-01T01:10:50.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2349034002359", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T01:10:52.000+0000" }, { "id": 40246293, "apikeyid": 15, "provider": "PRIME_AIRTIME", "productid": null, "amount": 1500.00, "currency": null, "merchantreference": "91920137924420181201011043", "uniquereference": "91920137924420181201011043", "timein": "2018-12-01T01:10:51.000+0000", "transactiontype": "AIRTIME", "country": null, "mobile": "2348064627909", "httpresponsecode": null, "status": "500", "message": "Recharge Failed", "reference": null, "code": "RECHARGE_FAILED", "paidamount": null, "paidcurrency": null, "topupamount": null, "topupcurrency": null, "target": null, "productidout": null, "time": null, "countryout": null, "operatorname": null, "completedin": null, "customerreference": null, "apitransactionid": null, "pinbased": "null", "timeout": "2018-12-01T01:10:53.000+0000" }]
+    let view='';
+    $.each(data, function (id, value) {
+      view+=`<tr><td>${value.provider}</td>`;
+      view+=`<td>${value.amount}</td>`
+      view+=`<td>${value.transactiontype}</td>`
+      view+=`<td>${value.mobile}</td>`;
+      view+=`<td>${value.message}</td>`
+      view+=`<td>${value.timein}</td>`
+      view+=`<td>${value.timeout}</td>`
+      view+=`<td>${value.status}</td></tr>`
+    });
+    $('#bodyData').replaceWith(`<tbody id='bodyData'>${view}</tbody>`);
+    $('#datatable').DataTable({
+      "pagingType": "full_numbers",
+      "lengthMenu": [
+        [10, 25, 50, -1],
+        [10, 25, 50, "All"]
+      ],
+      responsive: true,
+      language: {
+        search: "_INPUT_",
+        searchPlaceholder: "Search records",
+      }
+    });
+
+    var table = $('#datatable').DataTable();
+
+    // Edit record
+    table.on('click', '.edit', function () {
+      $tr = $(this).closest('tr');
+
+      var data = table.row($tr).data();
+      alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
+    });
+
+    // Delete a record
+    table.on('click', '.remove', function (e) {
+      $tr = $(this).closest('tr');
+      table.row($tr).remove().draw();
+      e.preventDefault();
+    });
+
+    //Like record
+    table.on('click', '.like', function () {
+      alert('You clicked on Like button');
+    });
+    //     var getAPI = "http://192.168.88.230:9090/find/report/list";
+    //     $.get(getAPI, function( data ) {
+    //   console.log(data)
+    //   alert( "Load was performed." );
+    // });
+  })
+  });
+</script>
+
+</html>
